@@ -1,0 +1,3 @@
+azure-eventhub==5.11.6
+websockets==12.0
+asyncio==3.4.3
