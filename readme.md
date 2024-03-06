@@ -2,15 +2,19 @@
 
 Got a python script that consumes trades data from binance and produces messages to azure eventhubs.
 
-Databricks notebook consumes eventhubs with pyspark and writes delta tables.
+Databricks notebook processes eventhubs with pyspark and writes delta tables.
 
-To be done:
- - Transformations
- - Aggregations
- - Visualization in PowerBI
+Power BI using partner connect to Databricks streams and visualize data
 
-### Stream 
-!["Strea,"](/docs/stream.png)
+### Streaming system
+!["Stream"](/docs/stream.png)
+
+## Silver layer table
+!["Silver Layer Table"](/docs/silver-layer.png)
+The gold layer of this stream system holds separate table for each symbol
+
+## PowerBI  databricks streaming visualizations
+!["Power BI Of Silver Layer Table"](/docs/powerbi.png)
 
 Useful links: 
 - [https://github.com/malvik01/Real-Time-Streaming-with-Azure-Databricks](https://github.com/malvik01/Real-Time-Streaming-with-Azure-Databricks)
