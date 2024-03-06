@@ -35,7 +35,7 @@ column_names = [
 
 async def subscribe_to_trade(symbol, producer_client):
     uri = f"wss://stream.binance.com:9443/ws/{symbol.lower()}@trade"
-    async with websockets.connect(uri) as websocket:
+    async with websockets.connect(uri, ping_timeout=20) as websocket:
         while True:
             message = await websocket.recv()
             dict_message = json.loads(message)
@@ -49,7 +49,7 @@ async def subscribe_to_trade(symbol, producer_client):
             
 
 async def main():
-    symbols = ["BNBBTC", "ETHBTC"]
+    symbols = ["BTCUSDT", "ETHBTC", 'BNBBTC']
      
     connection_str = ""
     producer = EventHubProducerClient.from_connection_string(conn_str=connection_str)
